@@ -19,6 +19,10 @@ code {
 h1, h2, p, ul, li {
   font-family: sans-serif;
 }
+h1{
+  color:goldenrod;
+  margin-bottom: 1.5em;
+}
 ul.header li {
   display: inline;
   list-style-type: none;
@@ -108,7 +112,7 @@ ul {
 list-style: none;
 }
 table{
-text-align: left;
+text-align: center;
 }
 td{
 text-align: left;
@@ -120,4 +124,25 @@ text-decoration: none;
 }
 a:hover{
 color: goldenrod;
+}
+/* .Column_title{
+  border-bottom: 1px solid maroon;
+  text-align: left;
+  padding-left: 10px;
+  font-size: 1.5em;
+}
+.mapNames{
+  font-size: 1.2em;
+} */
+.table td{
+  border: 0px !important;
+  font-size: 1.1em;
+
+}
+.table th{
+  border: none;
+  border-bottom: 1px solid maroon!important;
+  font-size: 1.5em;
+  padding-left: 1em
+
 }

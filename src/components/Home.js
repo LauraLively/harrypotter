@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
+import Table from 'react-bootstrap/Table'
 // data
 import HarryPotter from '../data/HarryPotter.json'
 // .js files
@@ -14,6 +13,7 @@ class Home extends Component {
     filterByHouse = house => {
         return HarryPotter.filter(character => character.house === house);
     };
+
     render() {
         const Gryff = this.filterByHouse("Gryffindor");
         const Slyth = this.filterByHouse("Slytherin");
@@ -22,36 +22,29 @@ class Home extends Component {
         const Unknown = this.filterByHouse("")
 
         return (
-            <React.Fragment>
-                <Container>
-                    <h1>Welcome to the world of Harry Potter!</h1>
-                    <Row>
-                        <Col>
-                            <Row>
-                                <Col><h3>Gryffindor</h3></Col>
-                                <Col>{this.mapNames(Gryff)}</Col>
-                            </Row>
-                            <Row>
-                                <Col><h3>Slytherin</h3></Col>
-                                <Col>{this.mapNames(Slyth)}</Col>
-                            </Row>
-                            <Row>
-                                <Col><h3>Hufflepuff</h3></Col>
-                                <Col>{this.mapNames(Huff)}</Col>
-                            </Row>
-                            <Row>
-                                <Col><h3>Ravenclaw</h3></Col>
-                                <Col>{this.mapNames(Raven)}</Col>
-                            </Row>
-                            <Row>
-                                <Col><h3>Unknown</h3></Col>
-                                <Col>{this.mapNames(Unknown)}</Col>
-                            </Row>
-                        </Col>
-                        <Col></Col>
-                    </Row>
-                </Container>
-            </React.Fragment>
+            <Container>
+                <h1>Welcome to the world of Harry Potter!</h1>
+                <Table responsive>
+                    <thead>
+                        <tr>
+                            <th>Gryffindor</th>
+                            <th>Slytherin</th>
+                            <th>Hufflepuff</th>
+                            <th>Ravenclaw</th>
+                            <th>Unknown</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{this.mapNames(Gryff)}</td>
+                            <td>{this.mapNames(Slyth)}</td>
+                            <td>{this.mapNames(Huff)}</td>
+                            <td>{this.mapNames(Raven)}</td>
+                            <td>{this.mapNames(Unknown)}</td>
+                        </tr>
+                    </tbody>
+                </Table>
+            </Container>
         );
     }
 }

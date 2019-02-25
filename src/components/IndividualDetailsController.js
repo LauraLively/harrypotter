@@ -14,7 +14,6 @@ class IndividualDetailController extends Component {
         const character = this.filterByName(name);
         return (
           <React.Fragment>
-            <h2>Character</h2>
             <ul>{this.mapNames(character)}</ul>
           </React.Fragment>
         );
